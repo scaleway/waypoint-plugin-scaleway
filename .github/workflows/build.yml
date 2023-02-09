@@ -1,13 +1,12 @@
 name: Build plugin
 
-on:
-  pull_request:
+on: [ pull_request, push ]
 
 jobs:
 
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Build the Plugin
       run: make build-docker
