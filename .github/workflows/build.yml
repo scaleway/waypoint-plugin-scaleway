@@ -1,6 +1,7 @@
 name: Build plugin
 
-on: [ push, pull_request ]
+on:
+  pull_request:
 
 jobs:
 
@@ -10,9 +11,3 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Plugin
       run: make build-docker
-
-    - name: Archive production artifacts
-      uses: actions/upload-artifact@v2
-      with:
-        name: plugin-binaries
-        path: releases
