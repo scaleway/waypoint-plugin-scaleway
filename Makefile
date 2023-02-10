@@ -29,9 +29,9 @@ build-%: %
 	@echo Compile Plugin $<
 
 	GOOS=linux GOARCH=amd64 go build -o ./bin/linux_amd64/waypoint-plugin-$(PLUGIN_NAME)-$< ./cmd/$</main.go
-    GOOS=darwin GOARCH=amd64 go build -o ./bin/darwin_amd64/waypoint-plugin-$(PLUGIN_NAME)-$< ./cmd/$</main.go
-    GOOS=windows GOARCH=amd64 go build -o ./bin/windows_amd64/waypoint-plugin-$(PLUGIN_NAME)-$<.exe ./cmd/$</main.go
-    GOOS=windows GOARCH=386 go build -o ./bin/windows_386/waypoint-plugin-$(PLUGIN_NAME)-$<.exe ./cmd/$</main.go
+	GOOS=darwin GOARCH=amd64 go build -o ./bin/darwin_amd64/waypoint-plugin-$(PLUGIN_NAME)-$< ./cmd/$</main.go
+	GOOS=windows GOARCH=amd64 go build -o ./bin/windows_amd64/waypoint-plugin-$(PLUGIN_NAME)-$<.exe ./cmd/$</main.go
+	GOOS=windows GOARCH=386 go build -o ./bin/windows_386/waypoint-plugin-$(PLUGIN_NAME)-$<.exe ./cmd/$</main.go
 
 install: ${PLUGINS:%=install-%}
 
