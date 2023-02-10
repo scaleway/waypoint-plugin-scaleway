@@ -171,10 +171,13 @@ func (p *Platform) destroy(
 	// If we don't have resource state, this state is from an older version
 	// and we need to manually recreate it.
 	if container.ResourceState == nil {
-		rm.Resource("deployment").SetState(&Resource_Container{
+		err := rm.Resource("deployment").SetState(&Resource_Container{
 			Id:     container.Id,
 			Region: container.Region,
 		})
+		if err != nil {
+			return err
+		}
 	} else {
 		// Load our set state
 		if err := rm.LoadState(container.ResourceState); err != nil {
