@@ -20,6 +20,5 @@ message Resource {
   message Container {
     string id = 1;
     string region = 2;
-    string toremove = 3; // TODO remove
   }
 }
