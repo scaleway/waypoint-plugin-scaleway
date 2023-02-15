@@ -152,7 +152,7 @@ func (p *Platform) resourceContainerStatus(
 		Name:                container.Name,
 		Type:                "container",
 		CategoryDisplayHint: sdk.ResourceCategoryDisplayHint_INSTANCE,
-		Platform:            "docker", // Make a docker icon appear on web ui
+		Platform:            "scaleway",
 		StateJson:           string(stateJson),
 		Health:              health,
 		HealthMessage:       healthMessage,

@@ -60,11 +60,13 @@ func (p *Platform) DestroyFunc() interface{} {
 func (p *Platform) resourceManager(
 	log hclog.Logger,
 	dcr *component.DeclaredResourcesResp,
+	dtr *component.DestroyedResourcesResp,
 ) *resource.Manager {
 	return resource.NewManager(
 		resource.WithLogger(log.Named("resource_manager")),
 		resource.WithValueProvider(p.scalewayContainerAPI),
 		resource.WithDeclaredResourcesResp(dcr),
+		resource.WithDestroyedResourcesResp(dtr),
 		resource.WithResource(resource.NewResource(
 			resource.WithName("container"),
 			resource.WithPlatform("scaleway"),
@@ -87,7 +89,7 @@ func (p *Platform) status(
 	sg := ui.StepGroup()
 	s := sg.Add("Checking the status of the container deployment...")
 
-	rm := p.resourceManager(log, nil)
+	rm := p.resourceManager(log, nil, nil)
 
 	if container.ResourceState == nil {
 		s.Update("Creating state")
@@ -140,7 +142,7 @@ func (p *Platform) deploy(
 	container.DeploymentId = id
 	container.Name = strings.ToLower(fmt.Sprintf("%s-v%v", src.App, deployConfig.Sequence))
 
-	rm := p.resourceManager(log, dcr)
+	rm := p.resourceManager(log, dcr, nil)
 
 	err = rm.CreateAll(ctx, container, log, st, deployConfig, img)
 	if err != nil {
@@ -164,11 +166,12 @@ func (p *Platform) destroy(
 	ui terminal.UI,
 	log hclog.Logger,
 	container *Container,
+	dtr *component.DestroyedResourcesResp,
 ) error {
 	sg := ui.StepGroup()
 	defer sg.Wait()
 
-	rm := p.resourceManager(log, nil)
+	rm := p.resourceManager(log, nil, dtr)
 
 	// If we don't have resource state, this state is from an older version
 	// and we need to manually recreate it.
