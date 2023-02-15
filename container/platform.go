@@ -13,11 +13,13 @@ import (
 	sdk "github.com/hashicorp/waypoint-plugin-sdk/proto/gen"
 	"github.com/hashicorp/waypoint-plugin-sdk/terminal"
 	"github.com/hashicorp/waypoint/builtin/docker"
+	"github.com/scaleway/waypoint-plugin-scaleway/internal/plugin"
 )
 
 // Platform is the Platform implementation for Scaleway Container.
 type Platform struct {
-	config PlatformConfig
+	PluginConfig plugin.Config
+	config       PlatformConfig
 }
 
 var (

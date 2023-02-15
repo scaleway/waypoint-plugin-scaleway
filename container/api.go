@@ -14,7 +14,10 @@ func (p *Platform) scalewayClient() (*scw.Client, error) {
 	} else if err != nil {
 		return nil, fmt.Errorf("failed to load scaleway's config: %w", err)
 	}
-	client, err := scw.NewClient(scw.WithEnv(), scw.WithProfile(&cfg.Profile))
+	client, err := scw.NewClient(
+		scw.WithEnv(),
+		scw.WithProfile(&cfg.Profile),
+		scw.WithUserAgent(p.PluginConfig.UserAgent))
 	if err != nil {
 		return nil, fmt.Errorf("failed to init scaleway's client: %w", err)
 	}
