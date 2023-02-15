@@ -9,10 +9,17 @@ RUN go install github.com/golang/protobuf/protoc-gen-go@v1.5.2 && \
 RUN mkdir /go/plugin
 WORKDIR /go/plugin
 
+# Download dependencies
+COPY go.mod /go/plugin
+COPY go.sum /go/plugin
+RUN go mod download
+
 # Copy the source to the build folder
 COPY . /go/plugin
 
 # Build the plugin
+ARG VERSION
+ENV VERSION=$VERSION
 RUN chmod +x ./print_arch
 RUN make all
 
