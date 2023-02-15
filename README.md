@@ -18,6 +18,11 @@ API keys are loaded from [scaleway's config](https://github.com/scaleway/scalewa
 
 ## Install
 
+### From releases
+
+- `Download the zip of the latest version for your architecture`
+- `unzip waypoint-plugin-scaleway-container_*.zip -d ${HOME}/.config/waypoint/plugins/`
+
 ### From sources
 
 - `make all install`

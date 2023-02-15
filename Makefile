@@ -7,10 +7,14 @@ endif
 
 .PHONY: all
 
+# Plugin Version
+VERSION?=
+
+LDFLAGS=-X main.Version=${VERSION}
+
 PLUGINS=\
 	container
 
-#PLUGINS=${PLUGIN_LIST:%=$(PLUGIN_NAME)-%}
 
 all: protos build
 
@@ -28,10 +32,10 @@ build-%: %
 	@echo ""
 	@echo Compile Plugin $<
 
-	GOOS=linux GOARCH=amd64 go build -o ./bin/linux_amd64/waypoint-plugin-$(PLUGIN_NAME)-$< ./cmd/$</main.go
-	GOOS=darwin GOARCH=amd64 go build -o ./bin/darwin_amd64/waypoint-plugin-$(PLUGIN_NAME)-$< ./cmd/$</main.go
-	GOOS=windows GOARCH=amd64 go build -o ./bin/windows_amd64/waypoint-plugin-$(PLUGIN_NAME)-$<.exe ./cmd/$</main.go
-	GOOS=windows GOARCH=386 go build -o ./bin/windows_386/waypoint-plugin-$(PLUGIN_NAME)-$<.exe ./cmd/$</main.go
+	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="${LDFLAGS}" -o ./bin/linux_amd64/waypoint-plugin-$(PLUGIN_NAME)-$< ./cmd/$</main.go
+	CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -ldflags="${LDFLAGS}" -o ./bin/darwin_amd64/waypoint-plugin-$(PLUGIN_NAME)-$< ./cmd/$</main.go
+	CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -ldflags="${LDFLAGS}" -o ./bin/windows_amd64/waypoint-plugin-$(PLUGIN_NAME)-$<.exe ./cmd/$</main.go
+	CGO_ENABLED=0 GOOS=windows GOARCH=386 go build -ldflags="${LDFLAGS}" -o ./bin/windows_386/waypoint-plugin-$(PLUGIN_NAME)-$<.exe ./cmd/$</main.go
 
 install: ${PLUGINS:%=install-%}
 
@@ -54,4 +58,4 @@ zip-%: %
 # Build the plugin using a Docker container
 build-docker:
 	rm -rf ./releases
-	DOCKER_BUILDKIT=1 docker build --output releases --progress=plain .
+	DOCKER_BUILDKIT=1 docker build --build-arg VERSION=${VERSION} --output releases --progress=plain .
