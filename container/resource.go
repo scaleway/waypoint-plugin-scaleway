@@ -47,21 +47,27 @@ func (p *Platform) resourceContainerCreate(
 	} else {
 		st.Update("Creating container")
 
+		entrypointEnv := []*containerSDK.Secret(nil)
+
+		for key, value := range deployConfig.Env() {
+			entrypointEnv = append(entrypointEnv, &containerSDK.Secret{
+				Key:   key,
+				Value: scw.StringPtr(value),
+			})
+		}
+
 		req := &containerSDK.CreateContainerRequest{
 			Region:                     scw.Region(p.config.Region),
 			NamespaceID:                p.config.Namespace,
 			Name:                       containerDeployment.Name,
-			EnvironmentVariables:       &map[string]string{}, // TODO add user environment
+			EnvironmentVariables:       &p.config.Env,
 			RegistryImage:              scw.StringPtr(img.Name()),
 			Port:                       scw.Uint32Ptr(uint32(p.config.Port)),
-			SecretEnvironmentVariables: nil, // TODO
+			SecretEnvironmentVariables: entrypointEnv,
 			MinScale:                   scw.Uint32Ptr(1),
 			MaxScale:                   scw.Uint32Ptr(1),
 		}
 
-		for key, value := range deployConfig.Env() {
-			(*req.EnvironmentVariables)[key] = value
-		}
 		container, err = scwContainerAPI.CreateContainer(req, scw.WithContext(ctx))
 		if err != nil {
 			return fmt.Errorf("failed to create container: %w", err)
