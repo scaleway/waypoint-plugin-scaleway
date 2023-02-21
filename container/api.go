@@ -14,10 +14,15 @@ func (p *Platform) scalewayClient() (*scw.Client, error) {
 	} else if err != nil {
 		return nil, fmt.Errorf("failed to load scaleway's config: %w", err)
 	}
-	client, err := scw.NewClient(
-		scw.WithEnv(),
+	clientOptions := []scw.ClientOption{
 		scw.WithProfile(&cfg.Profile),
-		scw.WithUserAgent(p.PluginConfig.UserAgent))
+		scw.WithEnv(),
+		scw.WithUserAgent(p.PluginConfig.UserAgent),
+	}
+	if p.overrideHttpClient != nil {
+		clientOptions = append(clientOptions, scw.WithHTTPClient(p.overrideHttpClient))
+	}
+	client, err := scw.NewClient(clientOptions...)
 	if err != nil {
 		return nil, fmt.Errorf("failed to init scaleway's client: %w", err)
 	}

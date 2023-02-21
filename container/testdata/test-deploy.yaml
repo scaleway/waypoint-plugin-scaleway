@@ -1,0 +1,661 @@
+---
+version: 1
+interactions:
+- request:
+    body: '{"name":"waypoint-container-testdeploy","environment_variables":null,"project_id":"ee7bd9e1-9cbd-4724-b2f4-19e50f3cf38b","description":"container
+      namespace creating by waypoint tests","secret_environment_variables":null}'
+    form: {}
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - scaleway-sdk-go/v1.0.0-beta.7+dev (go1.20.1; linux; amd64)
+    url: https://api.scaleway.com/containers/v1beta1/regions/nl-ams/namespaces
+    method: POST
+  response:
+    body: '{"id":"db6e444c-9672-447e-a2e2-c3a4d7b913e9","name":"waypoint-container-testdeploy","environment_variables":{},"organization_id":"ee7bd9e1-9cbd-4724-b2f4-19e50f3cf38b","project_id":"ee7bd9e1-9cbd-4724-b2f4-19e50f3cf38b","status":"pending","registry_namespace_id":"","error_message":null,"registry_endpoint":"","description":"container
+      namespace creating by waypoint tests","secret_environment_variables":[],"region":"nl-ams"}'
+    headers:
+      Content-Length:
+      - "425"
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 21 Feb 2023 14:03:31 GMT
+      Server:
+      - Scaleway API-Gateway
+      Strict-Transport-Security:
+      - max-age=63072000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - ad80a64a-3f32-4ae1-a7d6-f65c08d870fc
+    status: 200 OK
+    code: 200
+    duration: ""
+- request:
+    body: ""
+    form: {}
+    headers:
+      User-Agent:
+      - scaleway-sdk-go/v1.0.0-beta.7+dev (go1.20.1; linux; amd64)
+    url: https://api.scaleway.com/containers/v1beta1/regions/nl-ams/namespaces/db6e444c-9672-447e-a2e2-c3a4d7b913e9
+    method: GET
+  response:
+    body: '{"id":"db6e444c-9672-447e-a2e2-c3a4d7b913e9","name":"waypoint-container-testdeploy","environment_variables":{},"organization_id":"ee7bd9e1-9cbd-4724-b2f4-19e50f3cf38b","project_id":"ee7bd9e1-9cbd-4724-b2f4-19e50f3cf38b","status":"pending","registry_namespace_id":"","error_message":null,"registry_endpoint":"","description":"container
+      namespace creating by waypoint tests","secret_environment_variables":[],"region":"nl-ams"}'
+    headers:
+      Content-Length:
+      - "425"
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 21 Feb 2023 14:03:31 GMT
+      Server:
+      - Scaleway API-Gateway
+      Strict-Transport-Security:
+      - max-age=63072000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - c7f31019-5484-4a6a-9d25-181a747d8aa8
+    status: 200 OK
+    code: 200
+    duration: ""
+- request:
+    body: ""
+    form: {}
+    headers:
+      User-Agent:
+      - scaleway-sdk-go/v1.0.0-beta.7+dev (go1.20.1; linux; amd64)
+    url: https://api.scaleway.com/containers/v1beta1/regions/nl-ams/namespaces/db6e444c-9672-447e-a2e2-c3a4d7b913e9
+    method: GET
+  response:
+    body: '{"id":"db6e444c-9672-447e-a2e2-c3a4d7b913e9","name":"waypoint-container-testdeploy","environment_variables":{},"organization_id":"ee7bd9e1-9cbd-4724-b2f4-19e50f3cf38b","project_id":"ee7bd9e1-9cbd-4724-b2f4-19e50f3cf38b","status":"ready","registry_namespace_id":"64dfec7c-f759-45e0-9aa0-da0833127e81","error_message":null,"registry_endpoint":"rg.nl-ams.scw.cloud/funcscwwaypointcontainertescfaxnfej","description":"container
+      namespace creating by waypoint tests","secret_environment_variables":[],"region":"nl-ams"}'
+    headers:
+      Content-Length:
+      - "514"
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 21 Feb 2023 14:03:36 GMT
+      Server:
+      - Scaleway API-Gateway
+      Strict-Transport-Security:
+      - max-age=63072000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - dea041cd-06a5-4155-ae9c-44a9035c4421
+    status: 200 OK
+    code: 200
+    duration: ""
+- request:
+    body: ""
+    form: {}
+    headers:
+      User-Agent:
+      - scaleway-sdk-go/v1.0.0-beta.7+dev (go1.20.1; linux; amd64)
+    url: https://api.scaleway.com/containers/v1beta1/regions/nl-ams/namespaces/db6e444c-9672-447e-a2e2-c3a4d7b913e9
+    method: GET
+  response:
+    body: '{"id":"db6e444c-9672-447e-a2e2-c3a4d7b913e9","name":"waypoint-container-testdeploy","environment_variables":{},"organization_id":"ee7bd9e1-9cbd-4724-b2f4-19e50f3cf38b","project_id":"ee7bd9e1-9cbd-4724-b2f4-19e50f3cf38b","status":"ready","registry_namespace_id":"64dfec7c-f759-45e0-9aa0-da0833127e81","error_message":null,"registry_endpoint":"rg.nl-ams.scw.cloud/funcscwwaypointcontainertescfaxnfej","description":"container
+      namespace creating by waypoint tests","secret_environment_variables":[],"region":"nl-ams"}'
+    headers:
+      Content-Length:
+      - "514"
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 21 Feb 2023 14:03:54 GMT
+      Server:
+      - Scaleway API-Gateway
+      Strict-Transport-Security:
+      - max-age=63072000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - 3790c6e6-abdf-4528-9f9e-70ed72de4f9a
+    status: 200 OK
+    code: 200
+    duration: ""
+- request:
+    body: '{"namespace_id":"db6e444c-9672-447e-a2e2-c3a4d7b913e9","name":"app-name-v0","environment_variables":null,"min_scale":null,"max_scale":null,"memory_limit":null,"timeout":null,"privacy":"unknown_privacy","description":null,"registry_image":"rg.nl-ams.scw.cloud/funcscwwaypointcontainertescfaxnfej/nginx:test","max_concurrency":null,"protocol":"unknown_protocol","port":80,"secret_environment_variables":[{"key":"WAYPOINT_DEPLOYMENT_ID","value":""},{"key":"WAYPOINT_SERVER_DISABLE","value":"1"}],"http_option":"unknown_http_option"}'
+    form: {}
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - scaleway-sdk-go/v1.0.0-beta.7+dev (go1.20.1; linux; amd64) waypoint-plugin-scaleway-container/test
+    url: https://api.scaleway.com/containers/v1beta1/regions/nl-ams/containers
+    method: POST
+  response:
+    body: '{"id":"389a8b72-3363-4010-9941-9acf806fa213","name":"app-name-v0","namespace_id":"db6e444c-9672-447e-a2e2-c3a4d7b913e9","status":"created","environment_variables":{},"min_scale":0,"max_scale":5,"memory_limit":256,"cpu_limit":140,"timeout":"300s","error_message":null,"privacy":"public","description":"","registry_image":"rg.nl-ams.scw.cloud/funcscwwaypointcontainertescfaxnfej/nginx:test","max_concurrency":50,"domain_name":"waypointcontainertescfaxnfej-app-name-v0.functions.fnc.nl-ams.scw.cloud","protocol":"http1","port":80,"secret_environment_variables":[{"key":"WAYPOINT_DEPLOYMENT_ID","hashed_value":"$argon2id$v=19$m=65536,t=1,p=2$AQNoVXMSju96/fPtfiru3Q$VYUVkLvlg+LUemccNHQkDoR8kF5VSjoRrGyiPsB4emo"},{"key":"WAYPOINT_SERVER_DISABLE","hashed_value":"$argon2id$v=19$m=65536,t=1,p=2$tCLlbzsZcs9n0FkJv5Ezcg$4Uz+CSMPH3q7UB5eKQDcoRbkVCpxuM/FxYAkVFco5Qw"}],"http_option":"enabled","region":"nl-ams"}'
+    headers:
+      Content-Length:
+      - "899"
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 21 Feb 2023 14:03:55 GMT
+      Server:
+      - Scaleway API-Gateway
+      Strict-Transport-Security:
+      - max-age=63072000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - 45ebe355-1df1-4a34-a2dd-ee4672317173
+    status: 200 OK
+    code: 200
+    duration: ""
+- request:
+    body: '{}'
+    form: {}
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - scaleway-sdk-go/v1.0.0-beta.7+dev (go1.20.1; linux; amd64) waypoint-plugin-scaleway-container/test
+    url: https://api.scaleway.com/containers/v1beta1/regions/nl-ams/containers/389a8b72-3363-4010-9941-9acf806fa213/deploy
+    method: POST
+  response:
+    body: '{"id":"389a8b72-3363-4010-9941-9acf806fa213","name":"app-name-v0","namespace_id":"db6e444c-9672-447e-a2e2-c3a4d7b913e9","status":"pending","environment_variables":{},"min_scale":0,"max_scale":5,"memory_limit":256,"cpu_limit":140,"timeout":"300s","error_message":null,"privacy":"public","description":"","registry_image":"rg.nl-ams.scw.cloud/funcscwwaypointcontainertescfaxnfej/nginx:test","max_concurrency":50,"domain_name":"waypointcontainertescfaxnfej-app-name-v0.functions.fnc.nl-ams.scw.cloud","protocol":"http1","port":80,"secret_environment_variables":[{"key":"WAYPOINT_DEPLOYMENT_ID","hashed_value":"$argon2id$v=19$m=65536,t=1,p=2$AQNoVXMSju96/fPtfiru3Q$VYUVkLvlg+LUemccNHQkDoR8kF5VSjoRrGyiPsB4emo"},{"key":"WAYPOINT_SERVER_DISABLE","hashed_value":"$argon2id$v=19$m=65536,t=1,p=2$tCLlbzsZcs9n0FkJv5Ezcg$4Uz+CSMPH3q7UB5eKQDcoRbkVCpxuM/FxYAkVFco5Qw"}],"http_option":"enabled","region":"nl-ams"}'
+    headers:
+      Content-Length:
+      - "899"
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 21 Feb 2023 14:03:55 GMT
+      Server:
+      - Scaleway API-Gateway
+      Strict-Transport-Security:
+      - max-age=63072000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - efdbfbd8-3852-4d0f-aa8a-c493e9b6927d
+    status: 200 OK
+    code: 200
+    duration: ""
+- request:
+    body: ""
+    form: {}
+    headers:
+      User-Agent:
+      - scaleway-sdk-go/v1.0.0-beta.7+dev (go1.20.1; linux; amd64) waypoint-plugin-scaleway-container/test
+    url: https://api.scaleway.com/containers/v1beta1/regions/nl-ams/containers/389a8b72-3363-4010-9941-9acf806fa213
+    method: GET
+  response:
+    body: '{"id":"389a8b72-3363-4010-9941-9acf806fa213","name":"app-name-v0","namespace_id":"db6e444c-9672-447e-a2e2-c3a4d7b913e9","status":"pending","environment_variables":{},"min_scale":0,"max_scale":5,"memory_limit":256,"cpu_limit":140,"timeout":"300s","error_message":null,"privacy":"public","description":"","registry_image":"rg.nl-ams.scw.cloud/funcscwwaypointcontainertescfaxnfej/nginx:test","max_concurrency":50,"domain_name":"waypointcontainertescfaxnfej-app-name-v0.functions.fnc.nl-ams.scw.cloud","protocol":"http1","port":80,"secret_environment_variables":[{"key":"WAYPOINT_DEPLOYMENT_ID","hashed_value":"$argon2id$v=19$m=65536,t=1,p=2$AQNoVXMSju96/fPtfiru3Q$VYUVkLvlg+LUemccNHQkDoR8kF5VSjoRrGyiPsB4emo"},{"key":"WAYPOINT_SERVER_DISABLE","hashed_value":"$argon2id$v=19$m=65536,t=1,p=2$tCLlbzsZcs9n0FkJv5Ezcg$4Uz+CSMPH3q7UB5eKQDcoRbkVCpxuM/FxYAkVFco5Qw"}],"http_option":"enabled","region":"nl-ams"}'
+    headers:
+      Content-Length:
+      - "899"
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 21 Feb 2023 14:03:55 GMT
+      Server:
+      - Scaleway API-Gateway
+      Strict-Transport-Security:
+      - max-age=63072000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - f9e18555-e4de-4e89-954a-11bf8cacee70
+    status: 200 OK
+    code: 200
+    duration: ""
+- request:
+    body: ""
+    form: {}
+    headers:
+      User-Agent:
+      - scaleway-sdk-go/v1.0.0-beta.7+dev (go1.20.1; linux; amd64) waypoint-plugin-scaleway-container/test
+    url: https://api.scaleway.com/containers/v1beta1/regions/nl-ams/containers/389a8b72-3363-4010-9941-9acf806fa213
+    method: GET
+  response:
+    body: '{"id":"389a8b72-3363-4010-9941-9acf806fa213","name":"app-name-v0","namespace_id":"db6e444c-9672-447e-a2e2-c3a4d7b913e9","status":"pending","environment_variables":{},"min_scale":0,"max_scale":5,"memory_limit":256,"cpu_limit":140,"timeout":"300s","error_message":null,"privacy":"public","description":"","registry_image":"rg.nl-ams.scw.cloud/funcscwwaypointcontainertescfaxnfej/nginx:test","max_concurrency":50,"domain_name":"waypointcontainertescfaxnfej-app-name-v0.functions.fnc.nl-ams.scw.cloud","protocol":"http1","port":80,"secret_environment_variables":[{"key":"WAYPOINT_DEPLOYMENT_ID","hashed_value":"$argon2id$v=19$m=65536,t=1,p=2$AQNoVXMSju96/fPtfiru3Q$VYUVkLvlg+LUemccNHQkDoR8kF5VSjoRrGyiPsB4emo"},{"key":"WAYPOINT_SERVER_DISABLE","hashed_value":"$argon2id$v=19$m=65536,t=1,p=2$tCLlbzsZcs9n0FkJv5Ezcg$4Uz+CSMPH3q7UB5eKQDcoRbkVCpxuM/FxYAkVFco5Qw"}],"http_option":"enabled","region":"nl-ams"}'
+    headers:
+      Content-Length:
+      - "899"
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 21 Feb 2023 14:04:00 GMT
+      Server:
+      - Scaleway API-Gateway
+      Strict-Transport-Security:
+      - max-age=63072000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - 6a5d5b03-5879-42b6-b44a-390087fb2127
+    status: 200 OK
+    code: 200
+    duration: ""
+- request:
+    body: ""
+    form: {}
+    headers:
+      User-Agent:
+      - scaleway-sdk-go/v1.0.0-beta.7+dev (go1.20.1; linux; amd64) waypoint-plugin-scaleway-container/test
+    url: https://api.scaleway.com/containers/v1beta1/regions/nl-ams/containers/389a8b72-3363-4010-9941-9acf806fa213
+    method: GET
+  response:
+    body: '{"id":"389a8b72-3363-4010-9941-9acf806fa213","name":"app-name-v0","namespace_id":"db6e444c-9672-447e-a2e2-c3a4d7b913e9","status":"pending","environment_variables":{},"min_scale":0,"max_scale":5,"memory_limit":256,"cpu_limit":140,"timeout":"300s","error_message":null,"privacy":"public","description":"","registry_image":"rg.nl-ams.scw.cloud/funcscwwaypointcontainertescfaxnfej/nginx:test","max_concurrency":50,"domain_name":"waypointcontainertescfaxnfej-app-name-v0.functions.fnc.nl-ams.scw.cloud","protocol":"http1","port":80,"secret_environment_variables":[{"key":"WAYPOINT_DEPLOYMENT_ID","hashed_value":"$argon2id$v=19$m=65536,t=1,p=2$AQNoVXMSju96/fPtfiru3Q$VYUVkLvlg+LUemccNHQkDoR8kF5VSjoRrGyiPsB4emo"},{"key":"WAYPOINT_SERVER_DISABLE","hashed_value":"$argon2id$v=19$m=65536,t=1,p=2$tCLlbzsZcs9n0FkJv5Ezcg$4Uz+CSMPH3q7UB5eKQDcoRbkVCpxuM/FxYAkVFco5Qw"}],"http_option":"enabled","region":"nl-ams"}'
+    headers:
+      Content-Length:
+      - "899"
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 21 Feb 2023 14:04:05 GMT
+      Server:
+      - Scaleway API-Gateway
+      Strict-Transport-Security:
+      - max-age=63072000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - 4f3bf953-0ed7-4e24-8d4b-0607a8267701
+    status: 200 OK
+    code: 200
+    duration: ""
+- request:
+    body: ""
+    form: {}
+    headers:
+      User-Agent:
+      - scaleway-sdk-go/v1.0.0-beta.7+dev (go1.20.1; linux; amd64) waypoint-plugin-scaleway-container/test
+    url: https://api.scaleway.com/containers/v1beta1/regions/nl-ams/containers/389a8b72-3363-4010-9941-9acf806fa213
+    method: GET
+  response:
+    body: '{"id":"389a8b72-3363-4010-9941-9acf806fa213","name":"app-name-v0","namespace_id":"db6e444c-9672-447e-a2e2-c3a4d7b913e9","status":"pending","environment_variables":{},"min_scale":0,"max_scale":5,"memory_limit":256,"cpu_limit":140,"timeout":"300s","error_message":null,"privacy":"public","description":"","registry_image":"rg.nl-ams.scw.cloud/funcscwwaypointcontainertescfaxnfej/nginx:test","max_concurrency":50,"domain_name":"waypointcontainertescfaxnfej-app-name-v0.functions.fnc.nl-ams.scw.cloud","protocol":"http1","port":80,"secret_environment_variables":[{"key":"WAYPOINT_DEPLOYMENT_ID","hashed_value":"$argon2id$v=19$m=65536,t=1,p=2$AQNoVXMSju96/fPtfiru3Q$VYUVkLvlg+LUemccNHQkDoR8kF5VSjoRrGyiPsB4emo"},{"key":"WAYPOINT_SERVER_DISABLE","hashed_value":"$argon2id$v=19$m=65536,t=1,p=2$tCLlbzsZcs9n0FkJv5Ezcg$4Uz+CSMPH3q7UB5eKQDcoRbkVCpxuM/FxYAkVFco5Qw"}],"http_option":"enabled","region":"nl-ams"}'
+    headers:
+      Content-Length:
+      - "899"
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 21 Feb 2023 14:04:10 GMT
+      Server:
+      - Scaleway API-Gateway
+      Strict-Transport-Security:
+      - max-age=63072000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - 0fb79370-a0fd-40e3-8ffb-6c1822d6b369
+    status: 200 OK
+    code: 200
+    duration: ""
+- request:
+    body: ""
+    form: {}
+    headers:
+      User-Agent:
+      - scaleway-sdk-go/v1.0.0-beta.7+dev (go1.20.1; linux; amd64) waypoint-plugin-scaleway-container/test
+    url: https://api.scaleway.com/containers/v1beta1/regions/nl-ams/containers/389a8b72-3363-4010-9941-9acf806fa213
+    method: GET
+  response:
+    body: '{"id":"389a8b72-3363-4010-9941-9acf806fa213","name":"app-name-v0","namespace_id":"db6e444c-9672-447e-a2e2-c3a4d7b913e9","status":"ready","environment_variables":{},"min_scale":0,"max_scale":5,"memory_limit":256,"cpu_limit":140,"timeout":"300s","error_message":null,"privacy":"public","description":"","registry_image":"rg.nl-ams.scw.cloud/funcscwwaypointcontainertescfaxnfej/nginx:test","max_concurrency":50,"domain_name":"waypointcontainertescfaxnfej-app-name-v0.functions.fnc.nl-ams.scw.cloud","protocol":"http1","port":80,"secret_environment_variables":[{"key":"WAYPOINT_DEPLOYMENT_ID","hashed_value":"$argon2id$v=19$m=65536,t=1,p=2$AQNoVXMSju96/fPtfiru3Q$VYUVkLvlg+LUemccNHQkDoR8kF5VSjoRrGyiPsB4emo"},{"key":"WAYPOINT_SERVER_DISABLE","hashed_value":"$argon2id$v=19$m=65536,t=1,p=2$tCLlbzsZcs9n0FkJv5Ezcg$4Uz+CSMPH3q7UB5eKQDcoRbkVCpxuM/FxYAkVFco5Qw"}],"http_option":"enabled","region":"nl-ams"}'
+    headers:
+      Content-Length:
+      - "897"
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 21 Feb 2023 14:04:15 GMT
+      Server:
+      - Scaleway API-Gateway
+      Strict-Transport-Security:
+      - max-age=63072000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - 18688339-051f-46d0-867a-8f41faa7d77e
+    status: 200 OK
+    code: 200
+    duration: ""
+- request:
+    body: ""
+    form: {}
+    headers:
+      User-Agent:
+      - scaleway-sdk-go/v1.0.0-beta.7+dev (go1.20.1; linux; amd64)
+    url: https://api.scaleway.com/containers/v1beta1/regions/nl-ams/namespaces/db6e444c-9672-447e-a2e2-c3a4d7b913e9
+    method: DELETE
+  response:
+    body: '{"id":"db6e444c-9672-447e-a2e2-c3a4d7b913e9","name":"waypoint-container-testdeploy","environment_variables":{},"organization_id":"ee7bd9e1-9cbd-4724-b2f4-19e50f3cf38b","project_id":"ee7bd9e1-9cbd-4724-b2f4-19e50f3cf38b","status":"deleting","registry_namespace_id":"64dfec7c-f759-45e0-9aa0-da0833127e81","error_message":null,"registry_endpoint":"rg.nl-ams.scw.cloud/funcscwwaypointcontainertescfaxnfej","description":"container
+      namespace creating by waypoint tests","secret_environment_variables":[],"region":"nl-ams"}'
+    headers:
+      Content-Length:
+      - "517"
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 21 Feb 2023 14:04:15 GMT
+      Server:
+      - Scaleway API-Gateway
+      Strict-Transport-Security:
+      - max-age=63072000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - 026b36cc-6be4-4ef5-9952-d6a689ba15ec
+    status: 200 OK
+    code: 200
+    duration: ""
+- request:
+    body: ""
+    form: {}
+    headers:
+      User-Agent:
+      - scaleway-sdk-go/v1.0.0-beta.7+dev (go1.20.1; linux; amd64)
+    url: https://api.scaleway.com/containers/v1beta1/regions/nl-ams/namespaces/db6e444c-9672-447e-a2e2-c3a4d7b913e9
+    method: GET
+  response:
+    body: '{"id":"db6e444c-9672-447e-a2e2-c3a4d7b913e9","name":"waypoint-container-testdeploy","environment_variables":{},"organization_id":"ee7bd9e1-9cbd-4724-b2f4-19e50f3cf38b","project_id":"ee7bd9e1-9cbd-4724-b2f4-19e50f3cf38b","status":"deleting","registry_namespace_id":"64dfec7c-f759-45e0-9aa0-da0833127e81","error_message":null,"registry_endpoint":"rg.nl-ams.scw.cloud/funcscwwaypointcontainertescfaxnfej","description":"container
+      namespace creating by waypoint tests","secret_environment_variables":[],"region":"nl-ams"}'
+    headers:
+      Content-Length:
+      - "517"
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 21 Feb 2023 14:04:15 GMT
+      Server:
+      - Scaleway API-Gateway
+      Strict-Transport-Security:
+      - max-age=63072000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - 573f87c9-fb24-4d25-aa80-2d771445c13d
+    status: 200 OK
+    code: 200
+    duration: ""
+- request:
+    body: ""
+    form: {}
+    headers:
+      User-Agent:
+      - scaleway-sdk-go/v1.0.0-beta.7+dev (go1.20.1; linux; amd64)
+    url: https://api.scaleway.com/containers/v1beta1/regions/nl-ams/namespaces/db6e444c-9672-447e-a2e2-c3a4d7b913e9
+    method: GET
+  response:
+    body: '{"id":"db6e444c-9672-447e-a2e2-c3a4d7b913e9","name":"waypoint-container-testdeploy","environment_variables":{},"organization_id":"ee7bd9e1-9cbd-4724-b2f4-19e50f3cf38b","project_id":"ee7bd9e1-9cbd-4724-b2f4-19e50f3cf38b","status":"deleting","registry_namespace_id":"64dfec7c-f759-45e0-9aa0-da0833127e81","error_message":null,"registry_endpoint":"rg.nl-ams.scw.cloud/funcscwwaypointcontainertescfaxnfej","description":"container
+      namespace creating by waypoint tests","secret_environment_variables":[],"region":"nl-ams"}'
+    headers:
+      Content-Length:
+      - "517"
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 21 Feb 2023 14:04:20 GMT
+      Server:
+      - Scaleway API-Gateway
+      Strict-Transport-Security:
+      - max-age=63072000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - cda55b3c-fdba-4a83-8cc4-148e79c8a528
+    status: 200 OK
+    code: 200
+    duration: ""
+- request:
+    body: ""
+    form: {}
+    headers:
+      User-Agent:
+      - scaleway-sdk-go/v1.0.0-beta.7+dev (go1.20.1; linux; amd64)
+    url: https://api.scaleway.com/containers/v1beta1/regions/nl-ams/namespaces/db6e444c-9672-447e-a2e2-c3a4d7b913e9
+    method: GET
+  response:
+    body: '{"id":"db6e444c-9672-447e-a2e2-c3a4d7b913e9","name":"waypoint-container-testdeploy","environment_variables":{},"organization_id":"ee7bd9e1-9cbd-4724-b2f4-19e50f3cf38b","project_id":"ee7bd9e1-9cbd-4724-b2f4-19e50f3cf38b","status":"deleting","registry_namespace_id":"64dfec7c-f759-45e0-9aa0-da0833127e81","error_message":null,"registry_endpoint":"rg.nl-ams.scw.cloud/funcscwwaypointcontainertescfaxnfej","description":"container
+      namespace creating by waypoint tests","secret_environment_variables":[],"region":"nl-ams"}'
+    headers:
+      Content-Length:
+      - "517"
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 21 Feb 2023 14:04:25 GMT
+      Server:
+      - Scaleway API-Gateway
+      Strict-Transport-Security:
+      - max-age=63072000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - afa8fbca-1dc2-41e7-8061-6c972a1f1a51
+    status: 200 OK
+    code: 200
+    duration: ""
+- request:
+    body: ""
+    form: {}
+    headers:
+      User-Agent:
+      - scaleway-sdk-go/v1.0.0-beta.7+dev (go1.20.1; linux; amd64)
+    url: https://api.scaleway.com/containers/v1beta1/regions/nl-ams/namespaces/db6e444c-9672-447e-a2e2-c3a4d7b913e9
+    method: GET
+  response:
+    body: '{"id":"db6e444c-9672-447e-a2e2-c3a4d7b913e9","name":"waypoint-container-testdeploy","environment_variables":{},"organization_id":"ee7bd9e1-9cbd-4724-b2f4-19e50f3cf38b","project_id":"ee7bd9e1-9cbd-4724-b2f4-19e50f3cf38b","status":"deleting","registry_namespace_id":"64dfec7c-f759-45e0-9aa0-da0833127e81","error_message":null,"registry_endpoint":"rg.nl-ams.scw.cloud/funcscwwaypointcontainertescfaxnfej","description":"container
+      namespace creating by waypoint tests","secret_environment_variables":[],"region":"nl-ams"}'
+    headers:
+      Content-Length:
+      - "517"
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 21 Feb 2023 14:04:30 GMT
+      Server:
+      - Scaleway API-Gateway
+      Strict-Transport-Security:
+      - max-age=63072000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - 136b9cfe-56c4-450d-9bef-1a2808ddb159
+    status: 200 OK
+    code: 200
+    duration: ""
+- request:
+    body: ""
+    form: {}
+    headers:
+      User-Agent:
+      - scaleway-sdk-go/v1.0.0-beta.7+dev (go1.20.1; linux; amd64)
+    url: https://api.scaleway.com/containers/v1beta1/regions/nl-ams/namespaces/db6e444c-9672-447e-a2e2-c3a4d7b913e9
+    method: GET
+  response:
+    body: '{"id":"db6e444c-9672-447e-a2e2-c3a4d7b913e9","name":"waypoint-container-testdeploy","environment_variables":{},"organization_id":"ee7bd9e1-9cbd-4724-b2f4-19e50f3cf38b","project_id":"ee7bd9e1-9cbd-4724-b2f4-19e50f3cf38b","status":"deleting","registry_namespace_id":"64dfec7c-f759-45e0-9aa0-da0833127e81","error_message":null,"registry_endpoint":"rg.nl-ams.scw.cloud/funcscwwaypointcontainertescfaxnfej","description":"container
+      namespace creating by waypoint tests","secret_environment_variables":[],"region":"nl-ams"}'
+    headers:
+      Content-Length:
+      - "517"
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 21 Feb 2023 14:04:35 GMT
+      Server:
+      - Scaleway API-Gateway
+      Strict-Transport-Security:
+      - max-age=63072000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - 73c936c1-f703-4fa0-8b0b-07914ee46106
+    status: 200 OK
+    code: 200
+    duration: ""
+- request:
+    body: ""
+    form: {}
+    headers:
+      User-Agent:
+      - scaleway-sdk-go/v1.0.0-beta.7+dev (go1.20.1; linux; amd64)
+    url: https://api.scaleway.com/containers/v1beta1/regions/nl-ams/namespaces/db6e444c-9672-447e-a2e2-c3a4d7b913e9
+    method: GET
+  response:
+    body: '{"id":"db6e444c-9672-447e-a2e2-c3a4d7b913e9","name":"waypoint-container-testdeploy","environment_variables":{},"organization_id":"ee7bd9e1-9cbd-4724-b2f4-19e50f3cf38b","project_id":"ee7bd9e1-9cbd-4724-b2f4-19e50f3cf38b","status":"deleting","registry_namespace_id":"64dfec7c-f759-45e0-9aa0-da0833127e81","error_message":null,"registry_endpoint":"rg.nl-ams.scw.cloud/funcscwwaypointcontainertescfaxnfej","description":"container
+      namespace creating by waypoint tests","secret_environment_variables":[],"region":"nl-ams"}'
+    headers:
+      Content-Length:
+      - "517"
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 21 Feb 2023 14:04:41 GMT
+      Server:
+      - Scaleway API-Gateway
+      Strict-Transport-Security:
+      - max-age=63072000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - 8bc49af6-5072-4270-839e-2cd86bc068e6
+    status: 200 OK
+    code: 200
+    duration: ""
+- request:
+    body: ""
+    form: {}
+    headers:
+      User-Agent:
+      - scaleway-sdk-go/v1.0.0-beta.7+dev (go1.20.1; linux; amd64)
+    url: https://api.scaleway.com/containers/v1beta1/regions/nl-ams/namespaces/db6e444c-9672-447e-a2e2-c3a4d7b913e9
+    method: GET
+  response:
+    body: '{"message":"Namespace was not found"}'
+    headers:
+      Content-Length:
+      - "37"
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 21 Feb 2023 14:04:46 GMT
+      Server:
+      - Scaleway API-Gateway
+      Strict-Transport-Security:
+      - max-age=63072000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - eb1d986e-5094-407c-9587-794a41b8fb07
+    status: 404 Not Found
+    code: 404
+    duration: ""
+- request:
+    body: ""
+    form: {}
+    headers:
+      User-Agent:
+      - scaleway-sdk-go/v1.0.0-beta.7+dev (go1.20.1; linux; amd64)
+    url: https://api.scaleway.com/registry/v1/regions/nl-ams/namespaces/64dfec7c-f759-45e0-9aa0-da0833127e81
+    method: DELETE
+  response:
+    body: '{"id":"64dfec7c-f759-45e0-9aa0-da0833127e81","name":"funcscwwaypointcontainertescfaxnfej","description":"","organization_id":"ee7bd9e1-9cbd-4724-b2f4-19e50f3cf38b","project_id":"ee7bd9e1-9cbd-4724-b2f4-19e50f3cf38b","status":"deleting","status_message":"","endpoint":"rg.nl-ams.scw.cloud/funcscwwaypointcontainertescfaxnfej","is_public":false,"size":0,"created_at":"2023-02-21T14:03:35.771773Z","updated_at":"2023-02-21T14:04:46.138054736Z","image_count":1,"region":"nl-ams"}'
+    headers:
+      Content-Length:
+      - "475"
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 21 Feb 2023 14:04:46 GMT
+      Server:
+      - Scaleway API-Gateway
+      Strict-Transport-Security:
+      - max-age=63072000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Request-Id:
+      - cc961e8f-a8ae-4333-b77a-0508714600f6
+    status: 200 OK
+    code: 200
+    duration: ""
