@@ -1,4 +1,4 @@
-name: Build plugin
+name: Build plugin and test
 
 on: [ pull_request ]
 
@@ -10,3 +10,20 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Plugin
       run: make build-docker
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        plugins:
+          - container
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: 1.20
+      - name: Test plugin
+        run: go test -v ./${{ matrix.plugins }}/... -timeout=2h
+        env:
+          WAYPOINT_UPDATE_CASSETTES: false
+          SCW_DEFAULT_REGION: nl-ams
