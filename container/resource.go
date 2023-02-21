@@ -62,10 +62,11 @@ func (p *Platform) resourceContainerCreate(
 			Name:                       containerDeployment.Name,
 			EnvironmentVariables:       &p.config.Env,
 			RegistryImage:              scw.StringPtr(img.Name()),
-			Port:                       scw.Uint32Ptr(uint32(p.config.Port)),
+			Port:                       createContainerValue(p.config.Port),
 			SecretEnvironmentVariables: entrypointEnv,
-			MinScale:                   scw.Uint32Ptr(1),
-			MaxScale:                   scw.Uint32Ptr(1),
+			MinScale:                   createContainerValue(p.config.MinScale),
+			MaxScale:                   createContainerValue(p.config.MaxScale),
+			MemoryLimit:                createContainerValue(p.config.MemoryLimit),
 		}
 
 		container, err = scwContainerAPI.CreateContainer(req, scw.WithContext(ctx))

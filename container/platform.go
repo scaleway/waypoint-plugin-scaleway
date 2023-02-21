@@ -32,9 +32,14 @@ var (
 // PlatformConfig is the config for the Scaleway Container Platform
 type PlatformConfig struct {
 	Region    string            `hcl:"region,optional"`
-	Port      int               `hcl:"port,optional"`
+	Port      uint32            `hcl:"port,optional"`
 	Namespace string            `hcl:"namespace"`
 	Env       map[string]string `hcl:"env,optional"`
+
+	MinScale uint32 `hcl:"min_scale,optional"`
+	MaxScale uint32 `hcl:"max_scale,optional"`
+
+	MemoryLimit uint32 `hcl:"memory_limit,optional"`
 }
 
 func (p *Platform) ConfigSet(i interface{}) error {

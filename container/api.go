@@ -31,3 +31,10 @@ func (p *Platform) scalewayContainerAPI() (*containerSDK.API, error) {
 	}
 	return containerSDK.NewAPI(client), nil
 }
+
+func createContainerValue(value uint32) *uint32 {
+	if value == 0 {
+		return nil
+	}
+	return &value
+}
