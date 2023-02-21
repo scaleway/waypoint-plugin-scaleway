@@ -66,9 +66,13 @@ func (tt *TestTools) ContainerNamespace() *container.Namespace {
 // UploadTestImage upload a test image to target namespace
 // Skipped when not recording cassettes
 func (tt *TestTools) UploadTestImage(namespace *container.Namespace) (string, error) {
+	// Complete link to the image
+	scwTag := namespace.RegistryEndpoint + "/nginx:test"
+
 	if !UpdateCassettes {
-		return "", nil
+		return scwTag, nil
 	}
+
 	api := container.NewAPI(tt.scwClient)
 	namespace, err := api.WaitForNamespace(&container.WaitForNamespaceRequest{
 		NamespaceID: namespace.ID,
@@ -125,7 +129,6 @@ func (tt *TestTools) UploadTestImage(namespace *container.Namespace) (string, er
 	}
 
 	imageTag := testDockerIMG
-	scwTag := namespace.RegistryEndpoint + "/nginx:test"
 
 	err = dockerClient.ImageTag(ctx, imageTag, scwTag)
 	if err != nil {
