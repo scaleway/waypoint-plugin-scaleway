@@ -23,7 +23,7 @@ func getTestCassettePath(t *testing.T) string {
 	fileName = strcase.ToBashArg(fileName)
 
 	// Replace special characters.
-	fileName = specialChars.ReplaceAllLiteralString(fileName, "")
+	fileName = specialChars.ReplaceAllLiteralString(fileName, "") + ".cassette"
 
 	return filepath.Join(".", "testdata", fileName)
 }
