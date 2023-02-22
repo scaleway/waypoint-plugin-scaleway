@@ -1,8 +1,10 @@
 module github.com/scaleway/waypoint-plugin-scaleway
 
-go 1.19
+go 1.20
 
 require (
+	github.com/dnaeon/go-vcr v1.2.0
+	github.com/docker/docker v20.10.7+incompatible
 	github.com/hashicorp/go-hclog v0.16.2
 	github.com/hashicorp/opaqueany v0.0.0-20220321170339-a5c6ff5bb0ec
 	github.com/hashicorp/waypoint v0.10.5
@@ -39,7 +41,6 @@ require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/docker/cli v20.10.7+incompatible // indirect
 	github.com/docker/distribution v2.8.0+incompatible // indirect
-	github.com/docker/docker v20.10.7+incompatible // indirect
 	github.com/docker/docker-credential-helpers v0.6.3 // indirect
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/docker/go-metrics v0.0.1 // indirect

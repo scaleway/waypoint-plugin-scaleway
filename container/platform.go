@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
+	"net/http"
 	"strings"
 
 	"github.com/hashicorp/go-hclog"
@@ -18,8 +19,9 @@ import (
 
 // Platform is the Platform implementation for Scaleway Container.
 type Platform struct {
-	PluginConfig plugin.Config
-	config       PlatformConfig
+	overrideHttpClient *http.Client
+	PluginConfig       plugin.Config
+	config             PlatformConfig
 }
 
 var (
