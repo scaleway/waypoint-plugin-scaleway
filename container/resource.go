@@ -47,35 +47,7 @@ func (p *Platform) resourceContainerCreate(
 	} else {
 		st.Update("Creating container")
 
-		entrypointEnv := []*containerSDK.Secret(nil)
-
-		for key, value := range deployConfig.Env() {
-			entrypointEnv = append(entrypointEnv, &containerSDK.Secret{
-				Key:   key,
-				Value: scw.StringPtr(value),
-			})
-		}
-
-		req := &containerSDK.CreateContainerRequest{
-			Region:                     scw.Region(p.config.Region),
-			NamespaceID:                p.config.NamespaceID,
-			Name:                       containerDeployment.Name,
-			EnvironmentVariables:       &p.config.Env,
-			RegistryImage:              scw.StringPtr(img.Name()),
-			Port:                       createContainerValue(p.config.Port),
-			SecretEnvironmentVariables: entrypointEnv,
-			MinScale:                   createContainerValue(p.config.MinScale),
-			MaxScale:                   createContainerValue(p.config.MaxScale),
-			MemoryLimit:                createContainerValue(p.config.MemoryLimit),
-			MaxConcurrency:             createContainerValue(p.config.MaxConcurrency),
-			Privacy:                    containerSDK.ContainerPrivacy(p.config.Privacy),
-		}
-
-		if p.config.Timeout != 0 {
-			req.Timeout = &scw.Duration{
-				Seconds: int64(p.config.Timeout),
-			}
-		}
+		req := prepareContainerCreateRequest(containerDeployment.Name, img.Name(), &p.config, deployConfig.Env())
 
 		container, err = scwContainerAPI.CreateContainer(req, scw.WithContext(ctx))
 		if err != nil {

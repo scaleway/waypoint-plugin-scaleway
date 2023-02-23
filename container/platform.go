@@ -64,11 +64,12 @@ func (p *Platform) ConfigSet(i interface{}) error {
 	cfg := i.(*PlatformConfig)
 
 	privacy := containerSDK.ContainerPrivacy(cfg.Privacy)
-	if privacy != containerSDK.ContainerPrivacyPublic &&
+	if privacy != "" &&
+		privacy != containerSDK.ContainerPrivacyPublic &&
 		privacy != containerSDK.ContainerPrivacyPrivate {
 		return fmt.Errorf("invalid container privacy %q, only public or private allowed", privacy)
 	}
-	
+
 	return nil
 }
 

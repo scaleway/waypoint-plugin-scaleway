@@ -37,6 +37,48 @@ func (p *Platform) scalewayContainerAPI() (*containerSDK.API, error) {
 	return containerSDK.NewAPI(client), nil
 }
 
+func prepareContainerCreateRequest(
+	name string,
+	registryImage string,
+	cfg *PlatformConfig,
+	entrypointEnv map[string]string,
+) *containerSDK.CreateContainerRequest {
+	containerSecretEnv := []*containerSDK.Secret(nil)
+
+	for key, value := range entrypointEnv {
+		containerSecretEnv = append(containerSecretEnv, &containerSDK.Secret{
+			Key:   key,
+			Value: scw.StringPtr(value),
+		})
+	}
+
+	req := &containerSDK.CreateContainerRequest{
+		Region:                     scw.Region(cfg.Region),
+		NamespaceID:                cfg.NamespaceID,
+		Name:                       name,
+		EnvironmentVariables:       &cfg.Env,
+		RegistryImage:              &registryImage,
+		Port:                       createContainerValue(cfg.Port),
+		SecretEnvironmentVariables: containerSecretEnv,
+		MinScale:                   createContainerValue(cfg.MinScale),
+		MaxScale:                   createContainerValue(cfg.MaxScale),
+		MemoryLimit:                createContainerValue(cfg.MemoryLimit),
+		MaxConcurrency:             createContainerValue(cfg.MaxConcurrency),
+	}
+
+	if cfg.Privacy != "" {
+		req.Privacy = containerSDK.ContainerPrivacy(cfg.Privacy)
+	}
+
+	if cfg.Timeout != 0 {
+		req.Timeout = &scw.Duration{
+			Seconds: int64(cfg.Timeout),
+		}
+	}
+
+	return req
+}
+
 func createContainerValue(value uint32) *uint32 {
 	if value == 0 {
 		return nil
