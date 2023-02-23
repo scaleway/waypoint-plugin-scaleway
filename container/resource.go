@@ -58,7 +58,7 @@ func (p *Platform) resourceContainerCreate(
 
 		req := &containerSDK.CreateContainerRequest{
 			Region:                     scw.Region(p.config.Region),
-			NamespaceID:                p.config.Namespace,
+			NamespaceID:                p.config.NamespaceID,
 			Name:                       containerDeployment.Name,
 			EnvironmentVariables:       &p.config.Env,
 			RegistryImage:              scw.StringPtr(img.Name()),
@@ -67,6 +67,14 @@ func (p *Platform) resourceContainerCreate(
 			MinScale:                   createContainerValue(p.config.MinScale),
 			MaxScale:                   createContainerValue(p.config.MaxScale),
 			MemoryLimit:                createContainerValue(p.config.MemoryLimit),
+			MaxConcurrency:             createContainerValue(p.config.MaxConcurrency),
+			Privacy:                    containerSDK.ContainerPrivacy(p.config.Privacy),
+		}
+
+		if p.config.Timeout != 0 {
+			req.Timeout = &scw.Duration{
+				Seconds: int64(p.config.Timeout),
+			}
 		}
 
 		container, err = scwContainerAPI.CreateContainer(req, scw.WithContext(ctx))

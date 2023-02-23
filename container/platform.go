@@ -14,6 +14,7 @@ import (
 	sdk "github.com/hashicorp/waypoint-plugin-sdk/proto/gen"
 	"github.com/hashicorp/waypoint-plugin-sdk/terminal"
 	"github.com/hashicorp/waypoint/builtin/docker"
+	containerSDK "github.com/scaleway/scaleway-sdk-go/api/container/v1beta1"
 	"github.com/scaleway/waypoint-plugin-scaleway/internal/plugin"
 )
 
@@ -33,10 +34,25 @@ var (
 
 // PlatformConfig is the config for the Scaleway Container Platform
 type PlatformConfig struct {
-	Region    string            `hcl:"region,optional"`
-	Port      uint32            `hcl:"port,optional"`
-	Namespace string            `hcl:"namespace"`
-	Env       map[string]string `hcl:"env,optional"`
+	// NamespaceID is the ID of the container namespace used to deploy container
+	NamespaceID string `hcl:"namespace_id"`
+
+	// Region where the container namespace is located, will default to profile's namespace
+	Region string `hcl:"region,optional"`
+	// Port is the listening port of your container, will default to API's default
+	Port uint32 `hcl:"port,optional"`
+	// Env is a map of static env variables to add to your container, static env variable are not secrets
+	Env map[string]string `hcl:"env,optional"`
+
+	// Timeout is the maximum amount of time in seconds during which your container can process a request before being stopped
+	Timeout uint32 `hcl:"timeout,optional"`
+
+	// Privacy mode of your container, defaults to public
+	// your container may still remain public using waypoint url service
+	Privacy string `hcl:"privacy,optional"`
+
+	// MaxConcurrency is the maximum number of simultaneous requests your container can handle at the same time
+	MaxConcurrency uint32 `hcl:"max_concurrency,optional"`
 
 	MinScale uint32 `hcl:"min_scale,optional"`
 	MaxScale uint32 `hcl:"max_scale,optional"`
@@ -45,7 +61,14 @@ type PlatformConfig struct {
 }
 
 func (p *Platform) ConfigSet(i interface{}) error {
-	//TODO implement me
+	cfg := i.(*PlatformConfig)
+
+	privacy := containerSDK.ContainerPrivacy(cfg.Privacy)
+	if privacy != containerSDK.ContainerPrivacyPublic &&
+		privacy != containerSDK.ContainerPrivacyPrivate {
+		return fmt.Errorf("invalid container privacy %q, only public or private allowed", privacy)
+	}
+	
 	return nil
 }
 

@@ -9,7 +9,7 @@ Currently the only plugin is container
 deploy {
   use "scaleway-container" {
     port = 1337
-    namespace = "xxxx-xxxx-xxx-xxxx"
+    namespace_id = "xxxx-xxxx-xxx-xxxx"
     region = "fr-par"
   }
 }
