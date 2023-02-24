@@ -34,6 +34,9 @@ var (
 
 // PlatformConfig is the config for the Scaleway Container Platform
 type PlatformConfig struct {
+	// Profile name from scaleway config, used to change from default profile
+	Profile string `hcl:"profile,optional"`
+
 	// NamespaceID is the ID of the container namespace used to deploy container
 	NamespaceID string `hcl:"namespace_id"`
 
