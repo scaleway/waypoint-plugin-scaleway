@@ -14,8 +14,19 @@ func (p *Platform) scalewayClient() (*scw.Client, error) {
 	} else if err != nil {
 		return nil, fmt.Errorf("failed to load scaleway's config: %w", err)
 	}
+
+	profile := &cfg.Profile
+
+	if p.config.Profile != "" {
+		customProfile, exists := cfg.Profiles[p.config.Profile]
+		if !exists {
+			return nil, fmt.Errorf("invalid profile %q", p.config.Profile)
+		}
+		profile = customProfile
+	}
+
 	clientOptions := []scw.ClientOption{
-		scw.WithProfile(&cfg.Profile),
+		scw.WithProfile(profile),
 		scw.WithEnv(),
 		scw.WithUserAgent(p.PluginConfig.UserAgent),
 	}
