@@ -27,8 +27,8 @@ func TestDeploy(t *testing.T) {
 	p := Platform{
 		PluginConfig: plugin.InitConfig("test", "container"),
 		config: PlatformConfig{
-			Namespace: namespace.ID,
-			Port:      80,
+			NamespaceID: namespace.ID,
+			Port:        80,
 		},
 		overrideHttpClient: tt.HttpClient,
 	}
