@@ -54,12 +54,15 @@ type PlatformConfig struct {
 	// your container may still remain public using waypoint url service
 	Privacy string `hcl:"privacy,optional"`
 
-	// MaxConcurrency is the maximum number of simultaneous requests your container can handle at the same time
+	// MaxConcurrency is the maximum number of simultaneous requests your container can handle at the same time, defaults to 50
 	MaxConcurrency uint32 `hcl:"max_concurrency,optional"`
 
+	// MinScale is the minimum scaling value of your container, defaults to 0
 	MinScale uint32 `hcl:"min_scale,optional"`
+	// MaxScale is the minimum scaling value of your container, defaults to 5
 	MaxScale uint32 `hcl:"max_scale,optional"`
 
+	// MemoryLimit is the amount of memory allocated to your container, this is the value that change the price you pay per container, defaults to 256MB
 	MemoryLimit uint32 `hcl:"memory_limit,optional"`
 }
 
