@@ -23,7 +23,7 @@ List of all options can be found in [container's documentation](./docs/container
 ### From releases
 
 - `Download the zip of the latest version for your architecture`
-- `unzip waypoint-plugin-scaleway-container_*.zip -d ${HOME}/.config/waypoint/plugins/`
+- `unzip waypoint-plugin-scaleway-container_*.zip -d ${HOME}/.config/.waypoint/plugins/`
 
 ### From sources
 
