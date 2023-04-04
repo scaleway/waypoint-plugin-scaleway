@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/dnaeon/go-vcr v1.2.0
-	github.com/docker/docker v20.10.7+incompatible
+	github.com/docker/docker v20.10.24+incompatible
 	github.com/hashicorp/go-hclog v0.16.2
 	github.com/hashicorp/opaqueany v0.0.0-20220321170339-a5c6ff5bb0ec
 	github.com/hashicorp/waypoint v0.10.5
