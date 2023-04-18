@@ -5,14 +5,16 @@ KUBECONFIG_FILE=`terraform show -json | jq '.values.root_module.resources[] | se
 echo "${KUBECONFIG_FILE}" > ./kubeconfig
 
 set +e
-KUBECONFIG=./kubeconfig helm status waypoint &>/dev/null
+output=$(KUBECONFIG=./kubeconfig waypoint install -platform=kubernetes -accept-tos)
+exit_code=$?
 set -e
 
-if [ $? -eq 0 ]; then
-    echo "Waypoint server already installed. Skipping..."
-else
-    echo "Installing waypoint server..."
-    KUBECONFIG=./kubeconfig helm install waypoint hashicorp/waypoint -f waypoint-values.yaml
+if [[ $output == *"Error installing server into kubernetes: cannot re-use a name that is still in use"* ]]; then
+    echo "Waypoint already installed, skipping..."
+else if [[ $exit_code -ne 0 ]]; then
+    exit $exit_code
+fi
+    echo "Waypoint installed successfully"
 fi
 
 CONTAINER_NAMESPACE_ID_REGIONAL=`terraform show -json | jq '.values.root_module.resources[] | select(.address == "scaleway_container_namespace.namespace") | .values.id' -r`
