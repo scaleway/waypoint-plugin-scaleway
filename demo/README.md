@@ -17,7 +17,7 @@ This demo will guide you testing waypoint on scaleway by deploying Waypoint on a
 ## Usage
 
 - Setup scaleway config or a complete environment with all required variables ([doc](../docs/scw-config.md))
-- `docker login rg.fr-par.scw.cloud -u nologin -p ${SCW_SECRET_KEY}` Login to scaleway registry if not already logged in
+- `docker login rg.nl-ams.scw.cloud -u nologin -p ${SCW_SECRET_KEY}` Login to scaleway registry if not already logged in
 - `terraform init` Init terraform project
 - `terraform apply` Create your kubernetes cluster and container namespace
 - `./setup.sh` Install waypoint server and complete the `waypoint.hcl` with your container namespace informations
