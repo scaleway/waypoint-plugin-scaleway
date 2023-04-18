@@ -15,5 +15,5 @@ REGISTRY_ENDPOINT=`terraform show -json | jq '.values.root_module.resources[] | 
 
 echo "Completing waypoint.hcl..."
 
-sed -i "s/{container-namespace}/${CONTAINER_NAMESPACE_ID}/g" waypoint.hcl
-sed -i "s#{registry-endpoint}#${REGISTRY_ENDPOINT}#g" waypoint.hcl
+sed -i.bak "s/{container-namespace}/${CONTAINER_NAMESPACE_ID}/g" waypoint.hcl
+sed -i.bak "s#{registry-endpoint}#${REGISTRY_ENDPOINT}#g" waypoint.hcl
