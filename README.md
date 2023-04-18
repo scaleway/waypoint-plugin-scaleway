@@ -22,9 +22,16 @@ List of all options can be found in [container's documentation](./docs/container
 
 ### From releases
 
-- `Download the zip of the latest version for your architecture`
-- `unzip waypoint-plugin-scaleway-container_*.zip -d ${HOME}/.config/waypoint/plugins/`
+- [Download the zip](https://github.com/scaleway/waypoint-plugin-scaleway/releases) of the latest version for your architecture
+- `unzip waypoint-plugin-scaleway-container_*.zip -d ~/.config/.waypoint/plugins/`
+
+> **Note**
+> On macOS, you will have to execute the following command to ignore developer authenticity verification :
+> ```
+> xattr -d com.apple.quarantine ~/.config/.waypoint/plugins/waypoint-plugin-scaleway-container
+> ```
 
 ### From sources
 
 - `make all install`
+
