@@ -4,9 +4,16 @@ KUBECONFIG_FILE=`terraform show -json | jq '.values.root_module.resources[] | se
 
 echo "${KUBECONFIG_FILE}" > ./kubeconfig
 
-echo "Installing waypoint server..."
+set +e
+KUBECONFIG=./kubeconfig helm status waypoint &>/dev/null
+set -e
 
-KUBECONFIG=./kubeconfig waypoint install -platform=kubernetes -accept-tos
+if [ $? -eq 0 ]; then
+    echo "Waypoint server already installed. Skipping..."
+else
+    echo "Installing waypoint server..."
+    KUBECONFIG=./kubeconfig helm install waypoint hashicorp/waypoint -f waypoint-values.yaml
+fi
 
 CONTAINER_NAMESPACE_ID_REGIONAL=`terraform show -json | jq '.values.root_module.resources[] | select(.address == "scaleway_container_namespace.namespace") | .values.id' -r`
 CONTAINER_NAMESPACE_ID="${CONTAINER_NAMESPACE_ID_REGIONAL#*/}"
