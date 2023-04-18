@@ -5,7 +5,7 @@ KUBECONFIG_FILE=`terraform show -json | jq '.values.root_module.resources[] | se
 echo "${KUBECONFIG_FILE}" > ./kubeconfig
 
 set +e
-output=$(KUBECONFIG=./kubeconfig waypoint install -platform=kubernetes -accept-tos)
+output=$(KUBECONFIG=./kubeconfig waypoint install -platform=kubernetes -accept-tos | tee /dev/tty)
 exit_code=$?
 set -e
 
