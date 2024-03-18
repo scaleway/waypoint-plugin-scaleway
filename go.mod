@@ -11,7 +11,7 @@ require (
 	github.com/hashicorp/waypoint-plugin-sdk v0.0.0-20221209154611-9ceb8a691558
 	github.com/scaleway/scaleway-sdk-go v1.0.0-beta.13.0.20230207201808-d7c376325ea7
 	google.golang.org/grpc v1.58.3
-	google.golang.org/protobuf v1.31.0
+	google.golang.org/protobuf v1.33.0
 )
 
 require (
